@@ -1,0 +1,326 @@
+/*   组团活动样式 */
+
+* {
+    box-sizing: border-box;
+}
+
+*{   
+    -webkit-touch-callout:none;  /*系统默认菜单被禁用*/   
+    -webkit-user-select:none; /*webkit浏览器*/   
+    -khtml-user-select:none; /*早期浏览器*/   
+    -moz-user-select:none;/*火狐*/   
+    -ms-user-select:none; /*IE10*/   
+    user-select:none;   
+}  
+
+//在添加完这段代码后，在IOS 上会有问题的，这个时候你会发现input 框无法正在输入了内容了；造成这个原因就是 -webkit-user-select:none; 这个属性造成的。
+input {      
+     -webkit-user-select:auto; /*webkit浏览器*/     
+}
+/*全局设置*/
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    border: 0 none;
+    font-size: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    max-height: 100000px;
+
+    /* 在X5新内核Blink中，在排版页面的时候，会主动对字体进行放大，会检测页面中的主字体，当某一块字体在我们的判定规则中，认为字号较小，并且是页面中的主要字体，就会采取主动放大的操作。然而这不是我们想要的，可以采取给最大高度解决 */
+}
+
+
+.redbg {
+    background: #f4454e;
+}
+
+.box {
+    img {
+        width: 100%;
+    }
+    .content1 {
+        margin: 0 0.5rem;
+        display: flex;
+        a {
+            flex: 1;
+            color: #fff;
+            font-size: 0.24rem;
+            i {
+                display: inline-block;
+                width: 0.35rem;
+                height: 0.35rem;
+                margin-right: 0.2rem;
+                vertical-align: middle;
+                background: url(../images/Icon/Icon1.png) no-repeat;
+                background-size: 100%;
+            }
+            &.right i {
+                background: url(../images/Icon/Icon2.png) no-repeat;
+                background-size: 100%;
+            }
+        }
+    }
+}
+
+.invBox {
+    background: #fff;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    img {
+        width: 100%;
+    }
+    dl {
+        overflow: hidden;
+        width: 100%;
+        dt {
+            display: inline-block;
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right: 0.2rem;
+        }
+        dd {
+            display: inline-block;
+            color: #999;
+            font-size: 0.24rem;
+            vertical-align: super;
+            h3 {
+                font-size: 0.28rem;
+                color: #434343;
+                width: 4rem;
+            }
+            // .line1 {
+            //     padding-top: 0.2rem;
+            // }
+        }
+    }
+    .pp-primary-btn {
+        width: 100%;
+        margin: 0.1rem 0;
+        border-radius: 5px;
+    }
+    .Msg {
+        color: #f4454e;
+        text-align: center;
+    }
+}
+
+.listBox {
+    background: #fff;
+    margin: 0.2rem;
+}
+
+.teamList li {
+    border-top: 1px solid #ddd;
+    padding: 0.3rem 0.2rem;
+    .header {
+        height: 0.8rem;
+        width: 0.8rem;
+        display: inline-block;
+        &.header0 {
+            background: url(../images/Icon/no1.png) no-repeat 100%;
+        }
+        &.header1 {
+            background: url(../images/Icon/no2.png) no-repeat 100%;
+        }
+        &.header2 {
+            background: url(../images/Icon/no3.png) no-repeat 100%;
+        }
+    }
+    .content1 {
+        display: inline-block;
+        width: 6rem;
+        color: #999;
+        font-size: 0.24rem;
+        h3 {
+            font-size: 0.28rem;
+            margin-bottom: 0.1rem;
+            color: #434343;
+        }
+    }
+}
+
+.flexBox {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding-top: 0.2rem;
+    li {
+        flex: 1;
+        color: #999;
+    }
+}
+
+.blueList {
+    li {
+        background: #d7f1e8;
+    }
+    li:nth-child(odd) {
+        background: #fff;
+    }
+    span {
+        position: relative;
+        &:before {
+            color: #fff;
+            border-radius: 30px;
+            padding: 0.03rem;
+        }
+        &.me:before {
+            background: #80c9ff;
+            content: "我";
+        }
+        &.leader:before {
+            content: "团";
+            background: #fed4a1;
+        }
+        img {
+            width: 20px;
+            vertical-align: middle;
+        }
+    }
+}
+
+.ruleBox {
+    background: #fff;
+    padding-left: 0.2rem;
+    margin-bottom: 0.2rem;
+    h3 {
+        border-bottom: 1px solid #ddd;
+        height: 0.88rem;
+        line-height: 0.88rem;
+        font-size: 28px;
+        color: #434343;
+    }
+    .ruleContent {
+        padding: 10px 0;
+        p {
+            color: #999;
+        }
+        dl {
+            display: flex;
+            margin-right: 0.2rem;
+            dd,dt {
+                flex: 1;
+                border-bottom: 2px solid #fff;
+                background: #d7f1e8;
+                text-align: center;
+                color: #434343;
+                height: 0.62rem;
+                line-height: 0.62rem;
+            }
+            dt {
+                border-right: 2px solid #fff;
+                img {
+                    width: 0.35rem;
+                    vertical-align: sub;
+                }
+            }
+        }
+    }
+}
+
+.icons {
+    display: inline-block;
+    width: 0.35rem;
+    height: 0.35rem;
+    margin-right: 0.1rem;
+    vertical-align: middle;
+    background: url(../images/Icon/Icon3.png) no-repeat 100%;
+    &.icon1 {
+        background: url(../images/Icon/Icon4.png) no-repeat 100%;
+    }
+    &.icon2 {
+        background: url(../images/Icon/Icon5.png) no-repeat 100%;
+    }
+    &.icon3 {
+        background: url(../images/Icon/Icon6.png) no-repeat 100%;
+    }
+    &.icon4 {
+        background: url(../images/Icon/Icon7.png) no-repeat 100%;
+    }
+    &.icon5 {
+        background: url(../images/Icon/Icon8.png) no-repeat 100%;
+    }
+    &.icon6 {
+        background: url(../images/Icon/Icon9.png) no-repeat 100%;
+    }
+}
+
+.textinput {
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 0.1rem;
+}
+
+.footer {
+    padding-bottom: 0.3rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.24rem;
+}
+
+.right {
+    text-align: right;
+}
+
+.fr {
+    float: right;
+}
+
+.Loading{
+    text-align: center;
+}
