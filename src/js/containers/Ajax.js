@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import {  Modal } from 'antd-mobile';
+import {Button,  Modal } from 'antd-mobile';
 
-import {fetch_request} from '../actions/fetchActions'
+import {addCount,fetch_request} from '../actions/fetchActions'
 
 
 class Ajax extends React.Component {
@@ -12,7 +12,12 @@ class Ajax extends React.Component {
         this.state = {
             loading:true
         }
+        this.add = this.add.bind(this);
     }
+
+  add(){
+   this.props.addCount();
+  }
   componentDidMount() {
     const params = {
       PageIndex:1,
@@ -29,11 +34,13 @@ class Ajax extends React.Component {
         })
       } 
   }
+
    render(){
-    const {fetchData} = this.props;
+    const {fetchData, tick} = this.props;
 
     return (
       <div>
+
 
       {do{
         if(this.state.loading){
@@ -46,16 +53,21 @@ class Ajax extends React.Component {
             ))
         }
       }}
+      <p>{tick.count}</p>
+
+      <Button onClick={this.add}>+</Button>
+      <Button onClick={this.reduce}>-</Button>
       </div>
       )
    }
 }
 
-const mapStateToProps = ({fetchData}) => ({fetchData})
+const mapStateToProps = ({fetchData, tick}) => ({fetchData, tick})
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    fetch_request:bindActionCreators(fetch_request, dispatch)
+    fetch_request:bindActionCreators(fetch_request, dispatch),
+    addCount:bindActionCreators(addCount, dispatch),
   }
 }
 

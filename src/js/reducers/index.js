@@ -4,7 +4,8 @@ import { tick } from './tick'
 
 
 const rootReducer = combineReducers({
-	fetchData
+	fetchData,
+  tick
 });
 
 export default rootReducer;

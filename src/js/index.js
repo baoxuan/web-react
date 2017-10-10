@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import { hashHistory,Router } from 'react-router';
+import {Router } from 'react-router';
 
 import { Provider } from 'react-redux';
 
-import createHistory from 'history/createBrowserHistory'
-
+import createHistory from 'history/createHashHistory'
+const history = createHistory()
 
 
 import routes from './routes';
@@ -14,7 +14,8 @@ import configureStore from './store/configureStore';
 
 import 'style/index.css'
 
-import Home from './containers/Home';
+// import Home from './containers/Home';
+import Root from './Root';
 
 
 const store = configureStore();
@@ -23,7 +24,9 @@ const store = configureStore();
 
 ReactDOM.render((
   <Provider store={store}>
-    <Router history={hashHistory} routes={routes} />
+    <Router history={history} >
+      <Root />
+    </Router>
   </Provider>),
 document.getElementById('app'),
 );

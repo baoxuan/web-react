@@ -6,6 +6,7 @@ export default class SegmentedControlTest extends React.Component {
   constructor(props) {
     super(props);
   }
+  
   onChange = (e) => {
     console.log(`selectedIndex:${e.nativeEvent.selectedSegmentIndex}`);
   }

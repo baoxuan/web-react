@@ -5,3 +5,6 @@
 
 export const FETCH_REQUEST = 'FETCH_REQUEST'
 export const FETCH_DOWN = 'FETCH_DOWN'
+
+export const ADD = 'ADD';
+export const DELETE = 'DELETE';

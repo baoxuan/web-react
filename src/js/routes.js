@@ -12,23 +12,17 @@ import {
   tabsTest,
   formTest,
   dataDisplay,
-  Home,
   cssTs
 } from './containers';
 
+const Home = ()=>(
+  <div>
+    <h2>Home</h2>
+  </div>
+  )
 
 export default (
   <Router>
     <Route exact path="/" component={Home} /> 
-    <Route path="Ajax"  component={Ajax} /> 
-    <Route path="ListViews"  component={ListViews} /> 
-    <Route path="tabBars"  component={tabBars} /> 
-    <Route path="flexTest"  component={flexTest} /> 
-    <Route path="NavBarTest"  component={NavBarTest} /> 
-    <Route path="SegmentedControlTest"  component={SegmentedControlTest} /> 
-    <Route path="tabsTest"  component={tabsTest} /> 
-    <Route path="formTest"  component={formTest} /> 
-    <Route path="dataDisplay"  component={dataDisplay} /> 
-    <Route path="cssTs"  component={cssTs} /> 
 </Router>
 );
